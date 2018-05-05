@@ -10,15 +10,20 @@ public class SpriteContainer : MonoBehaviour {
     {
         m_renderer = GetComponent<Renderer>();
         m_propertyBlock = new MaterialPropertyBlock();
+        UpdateSprite();
+
     }
 	// Update is called once per frame
 	void Update () {
+        UpdateSprite();
+	}
+    void UpdateSprite(){
         m_renderer.GetPropertyBlock(m_propertyBlock);
         transform.localScale = SpriteQuadScale(m_selectedSprite);
         TouchGround();
         m_propertyBlock.SetTexture("_MainTex", textureFromSprite(m_selectedSprite));
         m_renderer.SetPropertyBlock(m_propertyBlock);
-	}
+    }
     void TouchGround(){
         Vector3 newPosition = new Vector3();
         newPosition.y = -(1 - transform.localScale.y * 0.5f * Mathf.Cos(Mathf.Deg2Rad * transform.localEulerAngles.x));
