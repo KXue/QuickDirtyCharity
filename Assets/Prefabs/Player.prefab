@@ -28,7 +28,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1850332955148182
 GameObject:
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1850332955148182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4861615271702018}
@@ -69,9 +69,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1513704453706122}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.38268346, y: -0, z: -0, w: 0.9238795}
+  m_LocalPosition: {x: 0, y: -0.17473091, z: 0}
+  m_LocalScale: {x: 0.63, y: 0.92, z: 1}
   m_Children: []
   m_Father: {fileID: 4098821093637584}
   m_RootOrder: 0
@@ -84,11 +84,11 @@ MeshRenderer:
   m_GameObject: {fileID: 1513704453706122}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 5cb4e26a3ed429b418f391044635ed45, type: 2}
   m_StaticBatchInfo:
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17d9990daf47e674487745a57aa186d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_parentHeightFromGround: 0.5
 --- !u!114 &114857169701047304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_selectedSprite: {fileID: 21300000, guid: 2beb99b0f2f9727429ae57681534fd4e, type: 3}
+  m_spriteScale: 1
 --- !u!114 &114949276283103642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cashPrefab: {fileID: 4253058679842836, guid: 892bdc26259c66f429af3c84dc4a6996,
     type: 2}
-  m_shootSpeed: 20
+  m_shootSpeed: 25
   m_spawnDistance: 0.2
   m_maxRange: 10
   m_maxCash: 10000
@@ -195,7 +197,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.4
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}

@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[ExecuteInEditMode]
 public class SpriteContainer : MonoBehaviour {
     public Sprite m_selectedSprite;
+    public float m_spriteScale = 1;
     Renderer m_renderer;
     MaterialPropertyBlock m_propertyBlock;
     void Start()
@@ -20,17 +21,12 @@ public class SpriteContainer : MonoBehaviour {
     void UpdateSprite(){
         m_renderer.GetPropertyBlock(m_propertyBlock);
         transform.localScale = SpriteQuadScale(m_selectedSprite);
-        TouchGround();
         m_propertyBlock.SetTexture("_MainTex", textureFromSprite(m_selectedSprite));
         m_renderer.SetPropertyBlock(m_propertyBlock);
     }
-    void TouchGround(){
-        Vector3 newPosition = new Vector3();
-        newPosition.y = -(1 - transform.localScale.y * 0.5f * Mathf.Cos(Mathf.Deg2Rad * transform.localEulerAngles.x));
-        transform.localPosition = newPosition;
-    }
+
     Vector3 SpriteQuadScale(Sprite sprite){
-        float baseWidth = transform.localScale.x;
+        float baseWidth = m_spriteScale * sprite.rect.width / sprite.pixelsPerUnit;
         float scaledHeight = baseWidth * sprite.rect.height / sprite.rect.width;
         return new Vector3(
             baseWidth,

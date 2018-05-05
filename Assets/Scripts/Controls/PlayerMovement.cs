@@ -17,8 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 		if(GetMovementInput().sqrMagnitude > 0){
             Vector2 inputDirection = GetMovementInput();
             Vector3 desiredMoveDirection = new Vector3(inputDirection.x, 0, inputDirection.y) * m_acceleration;
-            Vector3 brakeVector = Vector3.Project(desiredMoveDirection, m_rigidBody.velocity); //little extra braking
-            m_rigidBody.AddForce(brakeVector + desiredMoveDirection);
+            // Vector3 brakeVector = Vector3.Project(desiredMoveDirection, m_rigidBody.velocity); //little extra braking
+            m_rigidBody.AddForce(desiredMoveDirection);
         }
         else{
             m_rigidBody.AddForce(m_brakeForce * -m_rigidBody.velocity.normalized);

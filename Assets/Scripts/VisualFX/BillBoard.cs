@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class BillBoard : MonoBehaviour {
+    public float m_parentHeightFromGround;
     void LateUpdate()
     {
         // cameraPosition.y = transform.position.y;
@@ -12,5 +14,11 @@ public class BillBoard : MonoBehaviour {
         newRotation.y = cameraY;
         newRotation.x = cameraX;
         transform.rotation = Quaternion.Euler(newRotation);
+        TouchGround();
+    }
+    void TouchGround(){
+        Vector3 newPosition = new Vector3();
+        newPosition.y = -(m_parentHeightFromGround - transform.localScale.y * 0.5f * Mathf.Cos(Mathf.Deg2Rad * transform.localEulerAngles.x));
+        transform.localPosition = newPosition;
     }
 }

@@ -9,6 +9,7 @@ public class CashShooter : MonoBehaviour {
     public float m_maxRange;
     public float m_maxCash;
     private float m_cash;
+    Vector3 m_testHitLocation;
 	// Use this for initialization
 	void Start () {
 		m_cash = m_maxCash;
@@ -32,6 +33,7 @@ public class CashShooter : MonoBehaviour {
 
                 Transform cashProjectile = Instantiate(m_cashPrefab,transform.position + spawnPosition, Quaternion.identity);
                 cashProjectile.GetComponent<Rigidbody>().velocity = normalShootDirection * m_shootSpeed;
+                m_testHitLocation = foundClickPoint;
             }
         }
 	}
