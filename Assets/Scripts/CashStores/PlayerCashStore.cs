@@ -6,10 +6,13 @@ public class PlayerCashStore : CashStore {
     public Transform m_cashContainer;
     public GameManager m_gameManager;
     public BarUI m_cashBar;
+    void Update()
+    {
+        CheckGameOver();
+    }
     public override float TakeCash(float amount){
         float retAmount = base.TakeCash(amount);
         UpdateCashUI();
-        CheckGameOver();
         return retAmount;
     }
     void UpdateCashUI(){
