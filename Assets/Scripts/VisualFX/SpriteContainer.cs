@@ -4,6 +4,15 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class SpriteContainer : MonoBehaviour {
     public Sprite m_selectedSprite;
+    private Sprite m_previousSprite = null;
+    public float spriteScale{
+        get{
+            return m_spriteScale;
+        }
+        set{
+            m_spriteScale = value;
+        }
+    }
     public float m_spriteScale = 1;
     Renderer m_renderer;
     MaterialPropertyBlock m_propertyBlock;
@@ -12,22 +21,24 @@ public class SpriteContainer : MonoBehaviour {
         m_renderer = GetComponent<Renderer>();
         m_propertyBlock = new MaterialPropertyBlock();
         UpdateSprite();
-
     }
 	// Update is called once per frame
 	void Update () {
         UpdateSprite();
 	}
     void UpdateSprite(){
-        m_renderer.GetPropertyBlock(m_propertyBlock);
+        if(m_previousSprite == null || m_previousSprite != m_selectedSprite){
+            m_renderer.GetPropertyBlock(m_propertyBlock);
+            m_propertyBlock.SetTexture("_MainTex", textureFromSprite(m_selectedSprite));
+            m_renderer.SetPropertyBlock(m_propertyBlock);
+            m_previousSprite = m_selectedSprite;
+        }
         transform.localScale = SpriteQuadScale(m_selectedSprite);
-        m_propertyBlock.SetTexture("_MainTex", textureFromSprite(m_selectedSprite));
-        m_renderer.SetPropertyBlock(m_propertyBlock);
     }
 
     Vector3 SpriteQuadScale(Sprite sprite){
         float baseWidth = m_spriteScale * sprite.rect.width / sprite.pixelsPerUnit;
-        float scaledHeight = baseWidth * sprite.rect.height / sprite.rect.width;
+        float scaledHeight = Mathf.Abs(baseWidth * sprite.rect.height / sprite.rect.width);
         return new Vector3(
             baseWidth,
             scaledHeight,

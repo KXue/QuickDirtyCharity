@@ -11,15 +11,26 @@ public class CashBehaviour : MonoBehaviour {
     {
         m_cashStore = GetComponent<CashStore>();
     }
+    void Update(){
+        if(transform.position.y <= 0){
+            SetOnGround();
+            Vector3 position = transform.position;
+            position.y = 0;
+            transform.position = position;
+        }
+    }
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.layer == LayerMask.NameToLayer("Ground")){
-            m_isOnGround = true;
-            Rigidbody rigidbody = GetComponent<Rigidbody>();
-            rigidbody.velocity = new Vector3();
-            rigidbody.isKinematic = true;
-            SphereCollider collider = GetComponent<SphereCollider>();
-            collider.radius = m_collideRadius;
-            collider.isTrigger = false;
+           SetOnGround();
         }
+    }
+    private void SetOnGround(){
+        m_isOnGround = true;
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        rigidbody.velocity = new Vector3();
+        rigidbody.isKinematic = true;
+        SphereCollider collider = GetComponent<SphereCollider>();
+        collider.radius = m_collideRadius;
+        collider.isTrigger = false;
     }
 }

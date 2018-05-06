@@ -9,18 +9,27 @@ public class CashStore : MonoBehaviour {
             return m_cash > 0;
         }
     }
+    public float cash{
+        get{
+            return m_cash;
+        }
+        set{
+            m_cash = value;
+        }
+    }
+    [SerializeField]
     protected float m_cash;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
 		m_cash = m_startingCash;
 	}
     public virtual float TakeCash(float amount){
-        float retAmount = amount;
-        if(amount > m_cash){
-            retAmount = m_cash;
-        }
+        float retAmount = Mathf.Min(m_cash, amount);
         m_cash -= retAmount;
         return retAmount;
+    }
+    public virtual void GetCash(float amount){
+        m_cash += amount;
     }
 }

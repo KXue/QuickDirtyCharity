@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_startingCash: 10
+  m_cash: 0
 --- !u!114 &114614436041753282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed65fd9e94d99614eabded5a16d1dfb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_startingCash: 10
   m_influenceRadius: 5
   m_collideRadius: 0.5
   m_isOnGround: 0
@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59be0746cb3f7e5458c4cf2ec1775ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_selectedSprite: {fileID: 21300000, guid: 38d630caf5c7cb84e82e1965b7b73bfd, type: 3}
-  m_spriteScale: 1
+  m_selectedSprite: {fileID: 21300000, guid: 1ec0c84b3f24e884e8d27ce8a23118d7, type: 3}
+  m_spriteScale: 2
 --- !u!135 &135598670511223468
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -194,5 +194,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}

@@ -19,6 +19,7 @@ public class BillBoard : MonoBehaviour {
     void TouchGround(){
         Vector3 newPosition = new Vector3();
         newPosition.y = -(m_parentHeightFromGround - transform.localScale.y * 0.5f * Mathf.Cos(Mathf.Deg2Rad * transform.localEulerAngles.x));
-        transform.localPosition = newPosition;
+        newPosition.z = transform.localScale.y * 0.5f * Mathf.Sin(Mathf.Deg2Rad * transform.localEulerAngles.x);
+        transform.position = transform.parent.position + newPosition;
     }
 }

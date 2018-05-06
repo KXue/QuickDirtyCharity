@@ -28,7 +28,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!1 &1708249756150974
 GameObject:
@@ -39,9 +39,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4494206535020688}
   - component: {fileID: 136442115473564926}
-  - component: {fileID: 54937806760136118}
   - component: {fileID: 114856037544096298}
   - component: {fileID: 195479855526917488}
+  - component: {fileID: 82002289456340236}
   m_Layer: 12
   m_Name: Police
   m_TagString: Untagged
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1708249756150974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.23, y: 0.5, z: 1.82}
+  m_LocalPosition: {x: -7.97, y: 0.5, z: 1.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4662383491578678}
@@ -70,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281070991003918}
   m_LocalRotation: {x: 0.38268346, y: -0, z: -0, w: 0.9238795}
-  m_LocalPosition: {x: 0, y: -0.17826647, z: 0}
-  m_LocalScale: {x: 0.78, y: 0.90999997, z: 1}
+  m_LocalPosition: {x: 0, y: 0.083363056, z: 0.5833632}
+  m_LocalScale: {x: 1.2, y: 1.6500001, z: 1}
   m_Children: []
   m_Father: {fileID: 4494206535020688}
   m_RootOrder: 0
@@ -88,7 +88,7 @@ MeshRenderer:
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 5cb4e26a3ed429b418f391044635ed45, type: 2}
   m_StaticBatchInfo:
@@ -117,21 +117,87 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281070991003918}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54937806760136118
-Rigidbody:
+--- !u!82 &82002289456340236
+AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1708249756150974}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243346102856856126, guid: 56b9f441c8d90b84b8a634115a8e8da0,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 5d4390fc9f29d914281a78446487ac40, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.805
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114062172324231882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,8 +209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59be0746cb3f7e5458c4cf2ec1775ab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_selectedSprite: {fileID: 21300022, guid: 2beb99b0f2f9727429ae57681534fd4e, type: 3}
-  m_spriteScale: 1
+  m_selectedSprite: {fileID: 21300000, guid: 0244384cc2561cc4fa7c84f540a8c244, type: 3}
+  m_spriteScale: 1.5
 --- !u!114 &114856037544096298
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,8 +223,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_stealAmount: 100
-  m_player: {fileID: 0}
-  m_kickVector: {x: 0, y: 15, z: 35}
+  m_kickVector: {x: 0, y: 1, z: 10}
+  m_playerNoticeRange: 5
+  m_detectedClip: {fileID: 8300000, guid: e01f4cd11d43a5240bad3a0db9c5d50c, type: 3}
+  m_spriteContainer: {fileID: 114062172324231882}
 --- !u!114 &114862631670266774
 MonoBehaviour:
   m_ObjectHideFlags: 1
