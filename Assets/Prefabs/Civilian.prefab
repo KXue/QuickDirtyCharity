@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 136506111988568532}
   - component: {fileID: 114175440869582604}
   - component: {fileID: 54964973946474600}
+  - component: {fileID: 208273472414687446}
   m_Layer: 11
   m_Name: Civilian
   m_TagString: Untagged
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_collectRadius: 1
   m_cashCollectRate: 10
-  m_maxSpeed: 10
+  m_maxSpeed: 5
   m_acceleration: 15
   m_noticeRange: 5
 --- !u!114 &114533490754407038
@@ -185,3 +186,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &208273472414687446
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1061974201538008}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.4, y: 0.5, z: 0.4}
+  m_MoveThreshold: 0
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0

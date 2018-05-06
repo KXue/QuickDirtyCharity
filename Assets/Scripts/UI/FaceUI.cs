@@ -16,7 +16,6 @@ public class FaceUI : BarUI {
         if(m_fillScheme == FillScheme.quadratic){
             lerpT = m_fillPercentage * m_fillPercentage;
         }
-        Debug.Log(m_lowPercentColor + " " + m_highPercentColor);
         m_fillImage.color = Color.Lerp(m_lowPercentColor, m_highPercentColor, lerpT);
 
         if(m_fillPercentage > m_faceChangeCutoff){

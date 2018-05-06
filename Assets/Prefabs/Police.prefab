@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ecfd8795e5203845b4e43d2a87432f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_stealAmount: 100
   m_player: {fileID: 0}
+  m_kickVector: {x: 0, y: 15, z: 35}
 --- !u!114 &114862631670266774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +193,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.4
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -201,5 +203,5 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 5
   m_ObstacleAvoidanceType: 4

@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cash : MonoBehaviour {
-    public float m_startingCash;
+public class CashBehaviour : MonoBehaviour {
     public float m_influenceRadius;
     public float m_collideRadius;
     public bool m_isOnGround = false;
-    private float m_cash;
-
+    private CashStore m_cashStore;
     void Start()
     {
-        m_cash = m_startingCash;
+        m_cashStore = GetComponent<CashStore>();
     }
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.layer == LayerMask.NameToLayer("Ground")){
@@ -24,16 +22,4 @@ public class Cash : MonoBehaviour {
             collider.isTrigger = false;
         }
     }
-    public float TakeCash(float amount){
-        float retAmount = amount;
-        if(amount > m_cash){
-            retAmount = m_cash;
-        }
-        m_cash -= retAmount;
-        if(m_cash <= 0){
-            Destroy(gameObject);
-        }
-        return retAmount;
-    }
-
 }

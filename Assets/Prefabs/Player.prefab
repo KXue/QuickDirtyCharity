@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 4098821093637584}
   - component: {fileID: 136582536384222340}
   - component: {fileID: 114510813358155876}
+  - component: {fileID: 114035463455171322}
   - component: {fileID: 114949276283103642}
   - component: {fileID: 54078291496244320}
   m_Layer: 10
@@ -132,6 +133,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &114035463455171322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1850332955148182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf9f7af478a4a8b418caf88b0c4e6411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_startingCash: 1000
+  m_cashBar: {fileID: 0}
 --- !u!114 &114510813358155876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -143,9 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad6cfe82e44e65409e8db820a34b569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeed: 10
-  m_acceleration: 15
-  m_brakeForce: 10
+  m_maxSpeed: 7
+  m_acceleration: 25
+  m_brakeForce: 25
 --- !u!114 &114741242747170662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,12 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95beec5f9f54ca47b08b3c05199a5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cashPrefab: {fileID: 4253058679842836, guid: 892bdc26259c66f429af3c84dc4a6996,
+  m_cashPrefab: {fileID: 114310852505036576, guid: 892bdc26259c66f429af3c84dc4a6996,
     type: 2}
   m_shootSpeed: 25
   m_spawnDistance: 0.2
   m_maxRange: 10
-  m_maxCash: 10000
+  m_cashShotValue: 20
 --- !u!136 &136582536384222340
 CapsuleCollider:
   m_ObjectHideFlags: 1

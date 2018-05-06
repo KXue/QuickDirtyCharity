@@ -9,7 +9,7 @@ public class CivilianBehaviour : MonoBehaviour {
     public float m_acceleration = 10f;
     public float m_noticeRange = 10f;
     private float m_cash = 0;
-    private Cash m_cashScript;
+    private CashStore m_cashScript;
     private Rigidbody m_rigidBody;
     void Start()
     {
@@ -27,10 +27,10 @@ public class CivilianBehaviour : MonoBehaviour {
         int layerMask = LayerMask.GetMask(wantedLayers);
         RaycastHit[] hitResults = Physics.SphereCastAll(transform.position, m_noticeRange, Vector3.up, Mathf.Infinity, layerMask);
         foreach(RaycastHit hit in hitResults){
-            if(m_cashScript == null 
-                || m_cashScript != null 
-                && (hit.transform.position - transform.position).sqrMagnitude < (m_cashScript.transform.position - transform.position).sqrMagnitude){
-                m_cashScript = hit.transform.GetComponent<Cash>();
+            if(hit.transform.GetComponent<CashBehaviour>().m_isOnGround && 
+                (m_cashScript == null 
+                    || m_cashScript != null && (hit.transform.position - transform.position).sqrMagnitude < (m_cashScript.transform.position - transform.position).sqrMagnitude)){
+                m_cashScript = hit.transform.GetComponent<CashStore>();
             }
         }
     }
@@ -40,7 +40,6 @@ public class CivilianBehaviour : MonoBehaviour {
         }
     }
     void MoveTowardsCash(){
-        Debug.Log(m_cashScript.transform.position);
         m_rigidBody.AddForce((m_cashScript.transform.position - transform.position).normalized * m_acceleration);
         if(m_rigidBody.velocity.sqrMagnitude > m_maxSpeed * m_maxSpeed){
             m_rigidBody.velocity.Normalize();

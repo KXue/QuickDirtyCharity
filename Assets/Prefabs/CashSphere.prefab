@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 135598670511223468}
   - component: {fileID: 114614436041753282}
   - component: {fileID: 54882248009737922}
+  - component: {fileID: 114310852505036576}
   m_Layer: 13
   m_Name: CashSphere
   m_TagString: Untagged
@@ -143,6 +144,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_parentHeightFromGround: 0
+--- !u!114 &114310852505036576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1602856837526632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f7cc65ed9e7eb42a4486c84f11782b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_startingCash: 10
 --- !u!114 &114614436041753282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,6 +170,7 @@ MonoBehaviour:
   m_startingCash: 10
   m_influenceRadius: 5
   m_collideRadius: 0.5
+  m_isOnGround: 0
 --- !u!114 &114732384282134986
 MonoBehaviour:
   m_ObjectHideFlags: 1
